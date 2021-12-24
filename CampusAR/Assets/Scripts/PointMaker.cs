@@ -34,7 +34,6 @@ public class PointMaker : MonoBehaviour
 
     [MenuItem("ARLocation/Read file")]
     static void ReadString()
-
     {
         string path = "Assets/Resources/PointsList.txt";
         StreamReader reader = new StreamReader(path);

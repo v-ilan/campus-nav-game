@@ -25,7 +25,7 @@ public class PointSaver : MonoBehaviour
 
         string Pointcharactercis = "N:" + GO.name + "_PX:" + GO.transform.position.x + "_PY:" + GO.transform.position.y + "_PZ:" + GO.transform.position.z +
         "_RX:" + GO.transform.eulerAngles.x + "_RY:" + GO.transform.eulerAngles.y + "_RZ:" + GO.transform.eulerAngles.z + "_SX:" +
-        GO.transform.localScale.x + "_SY:+" + GO.transform.localScale.y + "_SZ:" + GO.transform.localScale.z + "kh";
+        GO.transform.localScale.x + "_SY:" + GO.transform.localScale.y + "_SZ:" + GO.transform.localScale.z + "kh";
         
         print(Pointcharactercis);
        

@@ -11,7 +11,7 @@ public class PointManager : MonoBehaviour
     public GameObject ARCam; //Main AR camera in our scene
     public GameObject Obj; // The object which we want to show when the user reach the point
     internal float dist; // The current distance between AR camera and object
-    public float Range = 30; // The range of show the object
+    public float Range = 10; // The range of show the object
 
     private void Awake()
     {

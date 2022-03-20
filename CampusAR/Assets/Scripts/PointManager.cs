@@ -30,7 +30,6 @@ public class PointManager : MonoBehaviour
             if (dist < Range)
             {
                 Obj.SetActive(true);
-                print(gameObject.name + "Has been reached !");
             }
 
             if (dist > Range)

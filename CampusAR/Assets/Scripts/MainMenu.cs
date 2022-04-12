@@ -10,9 +10,12 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    
-    //play the game with the obstacles
 
+    //play the game with the obstacles
+    public void PlayBuild ()
+    {
+        SceneManager.LoadScene(2);
+    }
 
     // to quit the game from main menu
     public void QuitGame()

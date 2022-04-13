@@ -25,6 +25,6 @@ public class RecordMove : MonoBehaviour
     public void SampleNow()
     {
         _sw.WriteLine("t {0} x {1} z {2} y {3} fx {4} fz {5} fy {6}",
-           Time.time, transform.position.x, transform.position.z, transform.forward.x, transform.forward.z);
+           Time.time, transform.position.x, transform.position.z, transform.position.y, transform.forward.x, transform.forward.z, transform.forward.y);
     }
 }

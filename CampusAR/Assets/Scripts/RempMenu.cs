@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.Experimental.XR;
 using UnityEngine.XR.ARFoundation;
 
-public class TeleportMenu : MonoBehaviour
+public class RempMenu : MonoBehaviour
 {
     public GameObject ARCam;
-    public ARSessionOrigin myARSessionOrigin;
     public Transform[] teleportPos;
 
     private void Awake()
@@ -16,14 +15,10 @@ public class TeleportMenu : MonoBehaviour
         {
             ARCam = GameObject.Find("AR Camera");
         }
-        if (myARSessionOrigin == null)
-        {
-            myARSessionOrigin = GetComponent<ARSessionOrigin>();
-        }
     }
 
-    public void Teleport(int teleIndex)
+    public void Remap(int teleIndex)
     {
-        myARSessionOrigin.transform.position = teleportPos[teleIndex].position;
+        teleportPos[teleIndex].transform.position = ARCam.transform.position;
     }
 }

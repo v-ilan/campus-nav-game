@@ -44,6 +44,10 @@ public class PointManager : MonoBehaviour
     {
         UnityEditor.Handles.color = Color.green;
         UnityEditor.Handles.DrawWireDisc(transform.position, transform.up, Range);
+        UnityEditor.Handles.color = Color.red;
+        UnityEditor.Handles.DrawWireDisc(transform.position, transform.right, Range);
+        UnityEditor.Handles.color = Color.blue;
+        UnityEditor.Handles.DrawWireDisc(transform.position, transform.forward, Range);
         UnityEditor.Handles.Label(transform.position, gameObject.name + "\nRange = " + Range);
     }
 #endif

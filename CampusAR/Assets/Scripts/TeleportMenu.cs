@@ -24,6 +24,7 @@ public class TeleportMenu : MonoBehaviour
 
     public void Teleport(int teleIndex)
     {
-        myARSessionOrigin.transform.position = teleportPos[teleIndex].position;
+        ARCam.transform.position = teleportPos[teleIndex].position;
+        ARCam.transform.rotation = teleportPos[teleIndex].rotation;
     }
 }

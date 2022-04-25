@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.Experimental.XR;
+using UnityEngine.XR.ARFoundation;
 
 public class RecordMove : MonoBehaviour
 {
@@ -9,6 +11,21 @@ public class RecordMove : MonoBehaviour
     public string outputFileName = "recordedPath";
 
     private StreamWriter _sw;
+
+    public GameObject ARCam;
+    public ARSessionOrigin myARSessionOrigin;
+
+    private void Awake()
+    {
+        if (ARCam == null)
+        {
+            ARCam = GameObject.Find("AR Camera");
+        }
+        if (myARSessionOrigin == null)
+        {
+            myARSessionOrigin = GetComponent<ARSessionOrigin>();
+        }
+    }
 
     public void OnEnable()
     {
@@ -24,7 +41,7 @@ public class RecordMove : MonoBehaviour
 
     public void SampleNow()
     {
-        _sw.WriteLine("t {0} x {1} z {2} y {3} fx {4} fz {5} fy {6}",
-           Time.time, transform.position.x, transform.position.z, transform.position.y, transform.forward.x, transform.forward.z, transform.forward.y);
+        _sw.WriteLine("t: {0}, position (x,y,z): {1}  rotation: {2}",
+           Time.time, ARCam.transform.position - myARSessionOrigin.transform.position, ARCam.transform.rotation);
     }
 }

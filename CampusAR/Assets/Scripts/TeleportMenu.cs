@@ -24,7 +24,6 @@ public class TeleportMenu : MonoBehaviour
 
     public void Teleport(int teleIndex)
     {
-        ARCam.transform.position = teleportPos[teleIndex].position;
-        ARCam.transform.rotation = teleportPos[teleIndex].rotation;
+        myARSessionOrigin.MakeContentAppearAt(teleportPos[teleIndex].transform, ARCam.transform.position, ARCam.transform.rotation); //  Quaternion.Inverse(ARCam.transform.rotation) *
     }
 }

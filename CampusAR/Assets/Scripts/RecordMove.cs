@@ -41,7 +41,6 @@ public class RecordMove : MonoBehaviour
 
     public void SampleNow()
     {
-        _sw.WriteLine("t: {0}, position (x,y,z): {1}  rotation: {2}",
-           Time.time, ARCam.transform.position - myARSessionOrigin.transform.position, ARCam.transform.rotation);
+        _sw.WriteLine("t: {0}, position (x,y,z): {1}  rotation: {2}", Time.time, ARCam.transform.position - myARSessionOrigin.transform.position, ARCam.transform.rotation * Quaternion.Inverse(myARSessionOrigin.transform.rotation));
     }
 }

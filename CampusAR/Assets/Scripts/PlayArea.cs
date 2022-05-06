@@ -11,6 +11,7 @@ public class PlayArea : MonoBehaviour
     private void Awake()
     {
         Obj.SetActive(false);
+        NextCollider.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {

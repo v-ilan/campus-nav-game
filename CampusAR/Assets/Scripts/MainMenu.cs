@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     }
 
     //play the game with the obstacles
-    public void PlayBuild ()
+    public void PlayBlocked ()
     {
         SceneManager.LoadScene(2);
     }

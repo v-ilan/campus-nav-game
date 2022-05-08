@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.Experimental.XR;
 using UnityEngine.XR.ARFoundation;
@@ -29,7 +30,7 @@ public class RecordMove : MonoBehaviour
 
     public void OnEnable()
     {
-        _sw = System.IO.File.AppendText(Application.persistentDataPath + outputFileName + ".txt");
+        _sw = System.IO.File.AppendText(Application.persistentDataPath + outputFileName + SceneManager.GetActiveScene().buildIndex + ".txt");
         InvokeRepeating("SampleNow", 0,  samplingTime);
     }
 
@@ -41,7 +42,7 @@ public class RecordMove : MonoBehaviour
 
     public void SampleNow()
     {
-        _sw.WriteLine("t: {0}, position (x,y,z): {1}, rotation: {2}, forward: {3}", Time.time, ARCam.transform.position - myARSessionOrigin.transform.position, ARCam.transform.rotation * Quaternion.Inverse(myARSessionOrigin.transform.rotation), ARCam.transform.forward - myARSessionOrigin.transform.forward);
+        _sw.WriteLine("t: {0}, position (x,y,z): {1}, forward: {2}", Time.time, ARCam.transform.position - myARSessionOrigin.transform.position, ARCam.transform.forward - myARSessionOrigin.transform.forward);
         
     }
 }

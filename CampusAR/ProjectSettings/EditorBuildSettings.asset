@@ -8,15 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 6d0000a4b63b99943b44bde1e0975853
-  - enabled: 0
-    path: Assets/Scenes/Stage1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/building_72_safe.unity
     guid: c34efc12b7d433c45bc4c3e37d81720a
   - enabled: 1
     path: Assets/Scenes/Building_72_blocked.unity
     guid: f8535c52e898ac9479db8287b93e0d5c
+  - enabled: 0
+    path: Assets/Scenes/Stage1.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 8cbc18ec5e21089498fbcde74cc20c29, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: a8eeee1d9e7f6e746a83ad156a0af62b, type: 2}

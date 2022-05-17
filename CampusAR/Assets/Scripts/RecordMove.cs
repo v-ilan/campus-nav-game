@@ -10,11 +10,12 @@ public class RecordMove : MonoBehaviour
 {
     public int samplingTime = 1; // sample time in sec
     public string outputFileName = "recordedPath";
-
     private StreamWriter _sw;
 
     public GameObject ARCam;
     public ARSessionOrigin myARSessionOrigin;
+    
+
 
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class RecordMove : MonoBehaviour
         }
         if (myARSessionOrigin == null)
         {
-            myARSessionOrigin = GetComponent<ARSessionOrigin>();
+            myARSessionOrigin = GetComponent<ARSessionOrigin> ();
         }
     }
 
@@ -32,6 +33,11 @@ public class RecordMove : MonoBehaviour
     {
         _sw = System.IO.File.AppendText(Application.persistentDataPath + outputFileName + SceneManager.GetActiveScene().buildIndex + ".txt");
         InvokeRepeating("SampleNow", 0,  samplingTime);
+    }
+
+    public void ReachLocation ()
+    {
+        _sw.WriteLine("t: {0}, position: (x,y,z): {1}, forward: {2} has been reached", Time.time, ARCam.transform.position, ARCam.transform.forward);
     }
 
     public void OnDisable()
@@ -42,7 +48,6 @@ public class RecordMove : MonoBehaviour
 
     public void SampleNow()
     {
-        _sw.WriteLine("t: {0}, position (x,y,z): {1}, forward: {2}", Time.time, ARCam.transform.position - myARSessionOrigin.transform.position, ARCam.transform.forward - myARSessionOrigin.transform.forward);
-        
+        _sw.WriteLine("t: {0}, position: (x,y,z): {1}, forward: {2}", Time.time, ARCam.transform.position, ARCam.transform.forward);
     }
 }

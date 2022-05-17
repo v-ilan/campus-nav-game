@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public void PlayMenu ()
+    {
+        SceneManager.LoadScene(0);
+    }
     //play the navigatyion game without the obstacles
     public void PlaySafe ()
     {

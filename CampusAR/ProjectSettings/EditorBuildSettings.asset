@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/building_72_safe.unity
     guid: c34efc12b7d433c45bc4c3e37d81720a
   - enabled: 1
+    path: Assets/Scenes/building_72_block.unity
+    guid: 74f6f8f943874d4418d6a76d7d87fe9b
+  - enabled: 0
     path: Assets/Scenes/Building_72_blocked.unity
     guid: f8535c52e898ac9479db8287b93e0d5c
   - enabled: 0
